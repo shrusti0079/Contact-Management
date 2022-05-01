@@ -1,0 +1,34 @@
+This is simple contact management system, which is a console-based application. We will add only basic contact management features, as full-fledged features can't be added only with c++.
+
+--> This is a Menu driven program. Options will be provided, to go to the Options using switch cases.
+-->Menu:
+    1. Add Contact
+    2. Search Contact
+    3. Help
+    4. Exit
+
+--> Exit: *clear the console screen
+	*Add an ending message
+	*add exit(1), with exit code 1.
+
+-->Help: you can add information or short details about the project and functions.
+
+-->Add Contact: 1. taking two input: name and phone number.  (1) declaring two variables, for first name and last name, using two separate variables cause we are not taking white space so that we can print them separately.
+		(2) We are not declaring int for phone number cause, then we will had to define a long long int, which we will waste of mem. So we are using string.
+		(3)Take input all the three variables: name, lastname and phone number.
+	
+	
+	2. Check if phone number is of digits(in India phone numbers have 10-digits). if length==10 the yes otherwise No.
+	
+	3. Check if all the digits are numbers and no char or special charcters. Iterate string, check if ascii value lies in the range of ascii values of numbers.  Otherwise Show error message in the console.
+	
+	4. After checking both inputs are correct, then we will check if we are able to open the created file.
+		If valid phone number then, open output file stream(contact.txt), check if it's open, using ofstream(object).open() which returns true if file is succesfully opened. Otherwise Show error message in the console.
+		
+	5. If yes then, write all the data inside the file, and show acknowledgment to the user. Store fname, lname and phone number.After entering close the txt file.
+		
+-->Search Contact: 1. Open an input file stream, ask for a keyword(lname or fname) from user for search.
+		2.(1) First asked for name to search
+			(2) Using while loop to read content of file. Before this ask file for inputstream. If found then print the lname, fnames and phone number in the console and return.
+
+Notes: On searching a contact it will print only the first contact saved who is having the keyword. However i commented the 'break;' so now it will print all the contact having the given keyword.
